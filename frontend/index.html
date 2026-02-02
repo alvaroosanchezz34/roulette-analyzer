@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Roulette Analyzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #e5e7eb;
+            padding: 40px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #22c55e;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .result {
+            margin-top: 20px;
+            background: #020617;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .state-Ruido {
+            color: #9ca3af;
+        }
+
+        .state-Observar {
+            color: #facc15;
+        }
+
+        .state-Interesante {
+            color: #fb923c;
+        }
+
+        .state-Anómalo {
+            color: #ef4444;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🎰 Roulette Analyzer</h1>
+    <p>Pega los resultados separados por comas:</p>
+
+    <textarea id="resultsInput">
+        32,15,7,32,0,26,32,19,7,32,14,32,6,32,20
+    </textarea>
+
+    <br />
+    <button onclick="analyze()">Analizar</button>
+
+    <div class="result">
+        <h3>📊 Resultados</h3>
+        <table id="table" style="width:100%; border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th>Número</th>
+                    <th>Z</th>
+                    <th>Estabilidad</th>
+                    <th>DSI</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody id="output"></tbody>
+        </table>
+        <p id="hint" style="opacity:.7; margin-top:10px;"></p>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
